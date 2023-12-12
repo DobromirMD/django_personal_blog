@@ -1,1 +1,2 @@
-# django_personal_blog
+# my_site
+ 
