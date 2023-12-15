@@ -1,6 +1,6 @@
 from django import forms
 
-from blog.models import Comment
+from blog.models import Comment, Post
 
 
 class CommentForm(forms.ModelForm):
@@ -12,3 +12,4 @@ class CommentForm(forms.ModelForm):
             "user_email": "Your Email",
             "text": "Your Comment",
         }
+
