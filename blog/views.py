@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import ListView, DetailView
 from django.views import View
@@ -57,7 +57,7 @@ class SinglePostView(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
+            return redirect(reverse("post-detail-page", args=[slug]))
 
         context = {
             "post": post,
@@ -99,4 +99,4 @@ class ReadLaterView(View):
 
         request.session['stored_posts'] = stored_posts
         slug = Post.objects.get(id=post_id).slug
-        return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
+        return redirect(reverse("post-detail-page", args=[slug]))

@@ -4,12 +4,12 @@
 from blog.models import Post, Author, Tag, Comment
 from django.contrib import admin
 
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_filter = ["author", "date", "tags"]
     list_display = ["title", "author", "date"]
     prepopulated_fields = {"slug": ("title",)}
-
 
 
 @admin.register(Author)

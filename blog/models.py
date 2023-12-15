@@ -1,4 +1,3 @@
-
 from django.core.validators import MinLengthValidator
 from django.db import models
 from django.urls import reverse
@@ -33,7 +32,6 @@ class Author(models.Model):
 
 class Post(models.Model):
 
-
     def its_url(self):
         return reverse('post_detail', args=[self.slug])
 
@@ -54,8 +52,8 @@ class Post(models.Model):
         auto_now=True
     )
     slug = models.SlugField(
-        unique=True,  # unique=True adds a index by default
-        db_index=True,  # auto for slug field
+        unique=True,
+        db_index=True,
     )
     content = models.TextField(
         validators=[
