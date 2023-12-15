@@ -1,7 +1,6 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 from django.views import View
 
 from blog.forms import CommentForm
